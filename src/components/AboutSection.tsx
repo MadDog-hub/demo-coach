@@ -1,4 +1,5 @@
-import { Award, Heart, Target, Users } from 'lucide-react';
+import { Award, Heart, Target, Users, ChevronDown, ChevronUp, BookOpen, Trophy, Calendar, Globe } from 'lucide-react';
+import { useState } from 'react';
 
 const AboutSection = () => {
   const philosophy = [
@@ -54,6 +55,10 @@ const AboutSection = () => {
     }
   ];
 
+  const [expanded, setExpanded] = useState(false);
+
+  const toggleExpanded = () => setExpanded(!expanded);
+
   return (
     <section id="about" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,29 +74,135 @@ const AboutSection = () => {
           </p>
         </div>
 
-        {/* Detailed Bio */}
+        {/* Enhanced My Story Section */}
         <div className="mb-20">
-          <div className="bg-card rounded-2xl p-8 shadow-lg">
-            <h3 className="text-2xl font-bold mb-6 text-center">My Story</h3>
-            <div className="prose prose-lg max-w-none text-muted-foreground">
-              <p className="mb-4">
-                My journey in fitness began over a decade ago when I realized that traditional 
-                one-size-fits-all approaches simply don't work for busy professionals. Having 
-                worked in corporate environments myself, I understand the unique challenges of 
-                balancing career demands with personal health goals.
-              </p>
-              <p className="mb-4">
-                This understanding led me to develop a coaching philosophy centered around 
-                sustainable lifestyle integration. Rather than extreme measures that can't be 
-                maintained long-term, I focus on creating realistic, achievable changes that 
-                fit seamlessly into demanding schedules.
-              </p>
-              <p>
-                Today, I'm proud to have helped over 500 clients worldwide achieve their 
-                transformation goals while maintaining successful careers. My approach combines 
-                evidence-based exercise science with practical lifestyle coaching, ensuring 
-                every client receives a truly personalized experience.
-              </p>
+          <div className="bg-gradient-to-br from-card via-card to-primary/5 rounded-2xl p-8 shadow-xl border border-primary/20 hover-lift">
+            <div className="flex flex-col lg:flex-row gap-8 items-start">
+              {/* Profile Image */}
+              <div className="lg:w-1/3">
+                <div className="relative group">
+                  <img
+                    src="/src/assets/our story.jpg"
+                    alt="Coach Andrei"
+                    className="w-full h-auto rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <div className="mt-6 flex flex-col items-center justify-center space-y-1">
+                  <h4 className="text-xl font-bold gradient-text mb-0">Coach Andrei</h4>
+                  <p className="text-muted-foreground text-sm m-0">Fitness Coach & Transformation Specialist</p>
+                </div>
+              </div>
+
+              {/* Story Content */}
+              <div className="lg:w-2/3">
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-2xl font-bold gradient-text">My Journey</h3>
+                  <button
+                    onClick={toggleExpanded}
+                    className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+                  >
+                    {expanded ? (
+                      <>
+                        <ChevronUp className="w-5 h-5" />
+                        Show Less
+                      </>
+                    ) : (
+                      <>
+                        <ChevronDown className="w-5 h-5" />
+                        Read Full Story
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                {/* Story Sections */}
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-primary/10 p-2 rounded-lg text-primary mt-1">
+                      <BookOpen className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold mb-2 text-foreground">
+                        The Beginning
+                      </h4>
+                      <p className="text-muted-foreground leading-relaxed">
+                        My journey in fitness began over a decade ago when I realized that traditional 
+                        one-size-fits-all approaches simply don't work for busy professionals. Having 
+                        worked in corporate environments myself, I understand the unique challenges of 
+                        balancing career demands with personal health goals.
+                      </p>
+                    </div>
+                  </div>
+
+                  {expanded && (
+                    <>
+                      <div className="flex items-start gap-4">
+                        <div className="bg-primary/10 p-2 rounded-lg text-primary mt-1">
+                          <Heart className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-semibold mb-2 text-foreground">
+                            My Philosophy
+                          </h4>
+                          <p className="text-muted-foreground leading-relaxed">
+                            This understanding led me to develop a coaching philosophy centered around 
+                            sustainable lifestyle integration. Rather than extreme measures that can't be 
+                            maintained long-term, I focus on creating realistic, achievable changes that 
+                            fit seamlessly into demanding schedules.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-4">
+                        <div className="bg-primary/10 p-2 rounded-lg text-primary mt-1">
+                          <Trophy className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-semibold mb-2 text-foreground">
+                            The Impact
+                          </h4>
+                          <p className="text-muted-foreground leading-relaxed">
+                            Today, I'm proud to have helped over 500 clients worldwide achieve their 
+                            transformation goals while maintaining successful careers. My approach combines 
+                            evidence-based exercise science with practical lifestyle coaching, ensuring 
+                            every client receives a truly personalized experience.
+                          </p>
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </div>
+
+                {/* Key Achievements */}
+                <div className="mt-8 p-6 bg-primary/5 rounded-xl border border-primary/10">
+                  <h4 className="text-lg font-semibold mb-4 text-center gradient-text">
+                    Key Achievements
+                  </h4>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div className="stats-card">
+                      <Trophy className="w-6 h-6 text-primary mx-auto mb-2" />
+                      <div className="text-2xl font-bold gradient-text">500+</div>
+                      <p className="text-sm text-muted-foreground">Clients Transformed</p>
+                    </div>
+                    <div className="stats-card">
+                      <Calendar className="w-6 h-6 text-primary mx-auto mb-2" />
+                      <div className="text-2xl font-bold gradient-text">10+</div>
+                      <p className="text-sm text-muted-foreground">Years Experience</p>
+                    </div>
+                    <div className="stats-card">
+                      <Globe className="w-6 h-6 text-primary mx-auto mb-2" />
+                      <div className="text-2xl font-bold gradient-text">20+</div>
+                      <p className="text-sm text-muted-foreground">Countries Served</p>
+                    </div>
+                    <div className="stats-card">
+                      <Award className="w-6 h-6 text-primary mx-auto mb-2" />
+                      <div className="text-2xl font-bold gradient-text">4</div>
+                      <p className="text-sm text-muted-foreground">Certifications</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
