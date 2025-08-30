@@ -232,7 +232,7 @@ const AboutSection = () => {
                 <img
                   src={`/src/assets/cert${index + 1}.png`}
                   alt={cert}
-                  className="w-32 h-32 mx-auto mb-3 object-contain"
+                  className="w-64 h-64 mx-auto mb-3 object-contain"
                 />
                 <p className="font-medium text-sm">{cert}</p>
               </div>
