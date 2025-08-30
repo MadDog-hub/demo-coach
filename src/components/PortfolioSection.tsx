@@ -103,16 +103,16 @@ const PortfolioSection = () => {
         </div>
 
         {/* Success Metrics */}
-        <div className="grid md:grid-cols-4 gap-6 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-20">
           {successMetrics.map((metric, index) => (
-            <div key={index} className="bg-card rounded-2xl p-8 text-center shadow-lg hover-lift">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+            <div key={index} className="bg-card rounded-2xl p-4 sm:p-6 md:p-8 text-center shadow-lg hover-lift">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-2">
                 {metric.number}
               </div>
-              <div className="text-lg font-semibold mb-1">
+              <div className="text-sm sm:text-base md:text-lg font-semibold mb-1">
                 {metric.label}
               </div>
-              <div className="text-sm text-muted-foreground">
+              <div className="text-xs sm:text-sm text-muted-foreground">
                 {metric.description}
               </div>
             </div>
@@ -121,31 +121,31 @@ const PortfolioSection = () => {
 
         {/* Client Transformations */}
         <div className="mb-20">
-          <h3 className="text-2xl font-bold text-center mb-12">Client Transformations</h3>
-          <div className="grid lg:grid-cols-3 gap-8">
+          <h3 className="text-xl sm:text-2xl font-bold text-center mb-8 sm:mb-12">Client Transformations</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {transformations.map((transformation, index) => (
               <div key={index} className="transformation-card">
                 <div className="aspect-w-4 aspect-h-3">
                   <img
                     src={transformation.image}
                     alt={`${transformation.name} transformation`}
-                    className="w-full h-64 object-cover"
+                    className="w-full h-48 sm:h-56 md:h-64 object-cover"
                   />
                 </div>
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-3">
-                    <div>
-                      <h4 className="text-xl font-bold">{transformation.name}</h4>
-                      <p className="text-muted-foreground">{transformation.profession}</p>
+                <div className="p-4 sm:p-6">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3">
+                    <div className="mb-2 sm:mb-0">
+                      <h4 className="text-lg sm:text-xl font-bold">{transformation.name}</h4>
+                      <p className="text-sm sm:text-base text-muted-foreground">{transformation.profession}</p>
                     </div>
-                    <div className="text-right">
-                      <div className="text-sm font-semibold text-primary">{transformation.timeframe}</div>
+                    <div className="text-left sm:text-right">
+                      <div className="text-xs sm:text-sm font-semibold text-primary">{transformation.timeframe}</div>
                     </div>
                   </div>
-                  <div className="bg-success/10 rounded-lg p-3 mb-4">
-                    <p className="text-success font-semibold">{transformation.results}</p>
+                  <div className="bg-success/10 rounded-lg p-2 sm:p-3 mb-3 sm:mb-4">
+                    <p className="text-sm sm:text-base text-success font-semibold">{transformation.results}</p>
                   </div>
-                  <blockquote className="text-muted-foreground italic">
+                  <blockquote className="text-sm sm:text-base text-muted-foreground italic leading-relaxed">
                     "{transformation.quote}"
                   </blockquote>
                 </div>
@@ -155,61 +155,124 @@ const PortfolioSection = () => {
         </div>
 
         {/* Testimonials Carousel */}
-        <div className="bg-secondary/30 rounded-3xl p-8 md:p-12">
-          <h3 className="text-2xl font-bold text-center mb-12">What My Clients Say</h3>
+        <div className="bg-secondary/30 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12">
+          <h3 className="text-xl sm:text-2xl font-bold text-center mb-8 sm:mb-12">What My Clients Say</h3>
           
           <div className="relative max-w-4xl mx-auto">
-            <div className="flex items-center justify-between mb-8">
-              <button
-                onClick={prevTestimonial}
-                className="p-3 rounded-full bg-card shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              
-              <div className="flex-1 mx-8">
-                <div className="testimonial-card">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-4">
-                      {testimonials[currentTestimonial].avatar}
-                    </div>
-                    <div>
-                      <h4 className="font-semibold">{testimonials[currentTestimonial].name}</h4>
-                      <p className="text-muted-foreground">{testimonials[currentTestimonial].role}</p>
-                    </div>
+            {/* Mobile-first layout */}
+            <div className="block sm:hidden">
+              <div className="testimonial-card mb-6">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-3 text-sm">
+                    {testimonials[currentTestimonial].avatar}
                   </div>
-                  
-                  <div className="flex mb-4">
-                    {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    ))}
+                  <div>
+                    <h4 className="font-semibold text-sm">{testimonials[currentTestimonial].name}</h4>
+                    <p className="text-xs text-muted-foreground">{testimonials[currentTestimonial].role}</p>
                   </div>
-                  
-                  <blockquote className="text-lg text-muted-foreground italic">
-                    "{testimonials[currentTestimonial].quote}"
-                  </blockquote>
                 </div>
+                
+                <div className="flex mb-3">
+                  {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                
+                <blockquote className="text-sm text-muted-foreground italic leading-relaxed">
+                  "{testimonials[currentTestimonial].quote}"
+                </blockquote>
               </div>
               
-              <button
-                onClick={nextTestimonial}
-                className="p-3 rounded-full bg-card shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
-            
-            {/* Dots Indicator */}
-            <div className="flex justify-center space-x-2">
-              {testimonials.map((_, index) => (
+              {/* Mobile navigation */}
+              <div className="flex items-center justify-center space-x-4">
                 <button
-                  key={index}
-                  onClick={() => setCurrentTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentTestimonial ? 'bg-primary' : 'bg-muted'
-                  }`}
-                />
-              ))}
+                  onClick={prevTestimonial}
+                  className="p-2 rounded-full bg-card shadow-lg hover:shadow-xl transition-all duration-300 touch-manipulation"
+                  aria-label="Previous testimonial"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                
+                <div className="flex space-x-2">
+                  {testimonials.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentTestimonial(index)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 touch-manipulation ${
+                        index === currentTestimonial ? 'bg-primary' : 'bg-muted'
+                      }`}
+                      aria-label={`Go to testimonial ${index + 1}`}
+                    />
+                  ))}
+                </div>
+                
+                <button
+                  onClick={nextTestimonial}
+                  className="p-2 rounded-full bg-card shadow-lg hover:shadow-xl transition-all duration-300 touch-manipulation"
+                  aria-label="Next testimonial"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Desktop layout */}
+            <div className="hidden sm:block">
+              <div className="flex items-center justify-between mb-6 sm:mb-8">
+                <button
+                  onClick={prevTestimonial}
+                  className="p-2 sm:p-3 rounded-full bg-card shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+                  aria-label="Previous testimonial"
+                >
+                  <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+                
+                <div className="flex-1 mx-4 sm:mx-6 md:mx-8">
+                  <div className="testimonial-card">
+                    <div className="flex items-center mb-4 sm:mb-6">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-3 sm:mr-4 text-sm sm:text-base">
+                        {testimonials[currentTestimonial].avatar}
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-sm sm:text-base">{testimonials[currentTestimonial].name}</h4>
+                        <p className="text-xs sm:text-sm text-muted-foreground">{testimonials[currentTestimonial].role}</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex mb-3 sm:mb-4">
+                      {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    
+                    <blockquote className="text-sm sm:text-base md:text-lg text-muted-foreground italic leading-relaxed">
+                      "{testimonials[currentTestimonial].quote}"
+                    </blockquote>
+                  </div>
+                </div>
+                
+                <button
+                  onClick={nextTestimonial}
+                  className="p-2 sm:p-3 rounded-full bg-card shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+                  aria-label="Next testimonial"
+                >
+                  <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </div>
+              
+              {/* Desktop dots indicator */}
+              <div className="flex justify-center space-x-2">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentTestimonial(index)}
+                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                      index === currentTestimonial ? 'bg-primary' : 'bg-muted'
+                    }`}
+                    aria-label={`Go to testimonial ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -131,12 +131,12 @@ const AboutSection = () => {
           <div className="max-w-4xl mx-auto">
             {timeline.map((item, index) => (
               <div key={index} className="timeline-item">
-                <div className="bg-card rounded-xl p-6 shadow-md ml-4">
+                <div className="bg-card rounded-xl p-4 sm:p-6 shadow-md ml-2 sm:ml-4">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                    <h4 className="text-xl font-semibold">{item.title}</h4>
-                    <span className="text-primary font-bold">{item.year}</span>
+                    <h4 className="text-lg sm:text-xl font-semibold">{item.title}</h4>
+                    <span className="text-primary font-bold text-sm sm:text-base">{item.year}</span>
                   </div>
-                  <p className="text-muted-foreground">{item.description}</p>
+                  <p className="text-muted-foreground text-sm sm:text-base">{item.description}</p>
                 </div>
               </div>
             ))}

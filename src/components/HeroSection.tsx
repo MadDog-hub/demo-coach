@@ -47,13 +47,13 @@ const HeroSection = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-8">
               {stats.map((stat, index) => (
                 <div key={index} className="stats-card">
-                  <div className="text-2xl md:text-3xl font-bold text-primary">
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">
                     {stat.number}
                   </div>
-                  <div className="text-sm text-muted-foreground font-medium">
+                  <div className="text-xs sm:text-sm text-muted-foreground font-medium">
                     {stat.label}
                   </div>
                 </div>

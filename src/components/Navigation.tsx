@@ -25,7 +25,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <button onClick={() => scrollToSection('hero')} className="text-xl font-bold gradient-text hover:scale-105 transition-transform duration-300 text-slate-800">
+          <button onClick={() => scrollToSection('hero')} className="text-xl font-bold gradient-text hover:scale-105 transition-transform duration-300">
             Coach Andrei Santos
           </button>
 

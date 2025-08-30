@@ -12,7 +12,7 @@ const ServicesSection = () => {
     {
       icon: <User className="w-8 h-8" />,
       title: '1:1 Online Coaching',
-      price: '$99',
+      price: '₱4,999',
       period: '/month',
       popular: true,
       features: [
@@ -27,7 +27,7 @@ const ServicesSection = () => {
     {
       icon: <Users className="w-8 h-8" />,
       title: 'Group Programs',
-      price: '$49',
+      price: '₱2,499',
       period: '/challenge',
       popular: false,
       features: [
@@ -42,7 +42,7 @@ const ServicesSection = () => {
     {
       icon: <Utensils className="w-8 h-8" />,
       title: 'Nutrition Plans',
-      price: '$79',
+      price: '₱3,999',
       period: '/one-time',
       popular: false,
       features: [
