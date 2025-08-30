@@ -82,7 +82,7 @@ const AboutSection = () => {
               <div className="lg:w-1/3">
                 <div className="relative group">
                   <img
-                    src="/src/assets/home-page.png"
+                    src="/src/assets/ourstory.jpg"
                     alt="Coach Andrei"
                     className="w-full h-auto rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-300"
                   />
@@ -229,7 +229,11 @@ const AboutSection = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {certifications.map((cert, index) => (
               <div key={index} className="bg-card rounded-xl p-6 text-center shadow-md hover-lift">
-                <Award className="w-8 h-8 text-primary mx-auto mb-3" />
+                <img
+                  src={`/src/assets/cert${index + 1}.png`}
+                  alt={cert}
+                  className="w-32 h-32 mx-auto mb-3 object-contain"
+                />
                 <p className="font-medium text-sm">{cert}</p>
               </div>
             ))}

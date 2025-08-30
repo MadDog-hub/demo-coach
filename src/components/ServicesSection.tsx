@@ -1,4 +1,4 @@
-import { Star, Users, Utensils, User } from 'lucide-react';
+import { Star, Users, Utensils, User, Mail, Facebook, Instagram, MessageCircle } from 'lucide-react';
 
 const ServicesSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -136,20 +136,24 @@ const ServicesSection = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-secondary/50 rounded-xl p-6 text-center">
+              <Mail className="w-8 h-8 text-primary mx-auto mb-3" />
               <h4 className="font-semibold text-primary mb-2">Email</h4>
-              <p className="text-muted-foreground">coach@andreisantos.com</p>
+              <p className="text-muted-foreground">maddogruel@gmail.com</p>
             </div>
             <div className="bg-secondary/50 rounded-xl p-6 text-center">
-              <h4 className="font-semibold text-primary mb-2">Phone</h4>
+              <Facebook className="w-8 h-8 text-primary mx-auto mb-3" />
+              <h4 className="font-semibold text-primary mb-2">Facebook</h4>
+              <p className="text-muted-foreground">@CoachAndreiOfficial</p>
+            </div>
+            <div className="bg-secondary/50 rounded-xl p-6 text-center">
+              <Instagram className="w-8 h-8 text-primary mx-auto mb-3" />
+              <h4 className="font-semibold text-primary mb-2">Instagram</h4>
+              <p className="text-muted-foreground">@CoachAndrei</p>
+            </div>
+            <div className="bg-secondary/50 rounded-xl p-6 text-center">
+              <MessageCircle className="w-8 h-8 text-primary mx-auto mb-3" />
+              <h4 className="font-semibold text-primary mb-2">WhatsApp</h4>
               <p className="text-muted-foreground">+1 (555) 123-4567</p>
-            </div>
-            <div className="bg-secondary/50 rounded-xl p-6 text-center">
-              <h4 className="font-semibold text-primary mb-2">Location</h4>
-              <p className="text-muted-foreground">Online Coaching Worldwide</p>
-            </div>
-            <div className="bg-secondary/50 rounded-xl p-6 text-center">
-              <h4 className="font-semibold text-primary mb-2">Response Time</h4>
-              <p className="text-muted-foreground">Within 24 hours</p>
             </div>
           </div>
         </div>
