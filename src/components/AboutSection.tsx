@@ -1,5 +1,10 @@
 import { Award, Heart, Target, Users, ChevronDown, ChevronUp, BookOpen, Trophy, Calendar, Globe } from 'lucide-react';
 import { useState } from 'react';
+import ourstoryImage from '../assets/ourstory.jpg';
+import cert1 from '../assets/cert1.png';
+import cert2 from '../assets/cert2.png';
+import cert3 from '../assets/cert3.png';
+import cert4 from '../assets/cert4.png';
 
 const AboutSection = () => {
   const philosophy = [
@@ -21,10 +26,10 @@ const AboutSection = () => {
   ];
 
   const certifications = [
-    'NASM Certified Personal Trainer',
-    'Precision Nutrition Level 1',
-    'Functional Movement Screen (FMS)',
-    'Corrective Exercise Specialist'
+    { name: 'NASM Certified Personal Trainer', image: cert1 },
+    { name: 'Precision Nutrition Level 1', image: cert2 },
+    { name: 'Functional Movement Screen (FMS)', image: cert3 },
+    { name: 'Corrective Exercise Specialist', image: cert4 }
   ];
 
   const timeline = [
@@ -82,7 +87,7 @@ const AboutSection = () => {
               <div className="lg:w-1/3">
                 <div className="relative group">
                   <img
-                    src="./assets/ourstory.jpg"
+                    src={ourstoryImage}
                     alt="Coach Andrei"
                     className="w-full h-auto rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-300"
                   />
@@ -230,11 +235,11 @@ const AboutSection = () => {
             {certifications.map((cert, index) => (
               <div key={index} className="bg-card rounded-xl p-6 text-center shadow-md hover-lift">
                 <img
-                  src={`./assets/cert${index + 1}.png`}
-                  alt={cert}
+                  src={cert.image}
+                  alt={cert.name}
                   className="w-64 h-64 mx-auto mb-3 object-contain"
                 />
-                <p className="font-medium text-sm">{cert}</p>
+                <p className="font-medium text-sm">{cert.name}</p>
               </div>
             ))}
           </div>

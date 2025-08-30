@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
-import transformation1 from '@/assets/first-transformation.png';
-import transformation2 from '@/assets/third-transformation.png';
-import transformation3 from '@/assets/2nd-transformation.png';
+import transformation1 from '../assets/first-transformation.png';
+import transformation2 from '../assets/third-transformation.png';
+import transformation3 from '../assets/transformationthree.png';
 
 const PortfolioSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
