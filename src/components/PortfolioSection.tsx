@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
-import transformation1 from '@/assets/transformation-1.jpg';
-import transformation2 from '@/assets/transformation-2.jpg';
-import transformation3 from '@/assets/transformation-3.jpg';
+import transformation1 from '@/assets/first-transformation.png';
+import transformation2 from '@/assets/third-transformation.png';
+import transformation3 from '@/assets/2nd-transformation.png';
 
 const PortfolioSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -18,7 +18,7 @@ const PortfolioSection = () => {
     },
     {
       image: transformation2,
-      name: 'Mike Chen',
+      name: 'Jessica Rodriguez',
       profession: 'Software Engineer',
       timeframe: '8 months',
       results: 'Built 15 lbs muscle, improved strength',
@@ -26,7 +26,7 @@ const PortfolioSection = () => {
     },
     {
       image: transformation3,
-      name: 'Jessica Rodriguez',
+      name: 'Mike Chen',
       profession: 'Business Executive',
       timeframe: '4 months',
       results: 'Lost 25 lbs, ran first marathon',

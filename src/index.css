@@ -189,4 +189,12 @@ All colors MUST be HSL.
   .gradient-border {
     @apply relative before:absolute before:inset-0 before:p-[2px] before:bg-gradient-to-r before:from-primary before:to-accent before:rounded-xl before:-z-10;
   }
+
+  /* Line clamp utilities */
+  .line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
