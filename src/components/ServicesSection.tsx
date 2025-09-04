@@ -1,4 +1,5 @@
 import { Star, Users, Utensils, User, Mail, Facebook, Instagram, MessageCircle } from 'lucide-react';
+import FitnessJourneyForm from './FitnessJourneyForm';
 
 const ServicesSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -129,31 +130,42 @@ const ServicesSection = () => {
               Ready to Start Your <span className="gradient-text">Fitness Journey?</span>
             </h3>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Get in touch to discuss your goals and find the perfect program for your lifestyle. 
+              Get in touch to discuss your goals and find the perfect program for your lifestyle.
               I respond to all inquiries within 24 hours.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-secondary/50 rounded-xl p-6 text-center">
-              <Mail className="w-8 h-8 text-primary mx-auto mb-3" />
-              <h4 className="font-semibold text-primary mb-2">Email</h4>
-              <p className="text-muted-foreground">maddogruel@gmail.com</p>
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Social Media Contact Cards - Left Side */}
+            <div className="space-y-6">
+              <div className="bg-secondary/50 rounded-xl p-6 text-center hover:bg-secondary/70 transition-all duration-300">
+                <Mail className="w-8 h-8 text-primary mx-auto mb-3" />
+                <h4 className="font-semibold text-primary mb-2">Email</h4>
+                <p className="text-muted-foreground">andreisantos@gmail.com</p>
+              </div>
+
+              <div className="bg-secondary/50 rounded-xl p-6 text-center hover:bg-secondary/70 transition-all duration-300">
+                <Facebook className="w-8 h-8 text-primary mx-auto mb-3" />
+                <h4 className="font-semibold text-primary mb-2">Facebook</h4>
+                <p className="text-muted-foreground">@CoachAndreiOfficial</p>
+              </div>
+
+              <div className="bg-secondary/50 rounded-xl p-6 text-center hover:bg-secondary/70 transition-all duration-300">
+                <Instagram className="w-8 h-8 text-primary mx-auto mb-3" />
+                <h4 className="font-semibold text-primary mb-2">Instagram</h4>
+                <p className="text-muted-foreground">@CoachAndrei</p>
+              </div>
+
+              <div className="bg-secondary/50 rounded-xl p-6 text-center hover:bg-secondary/70 transition-all duration-300">
+                <MessageCircle className="w-8 h-8 text-primary mx-auto mb-3" />
+                <h4 className="font-semibold text-primary mb-2">WhatsApp</h4>
+                <p className="text-muted-foreground">+1 (555) 123-4567</p>
+              </div>
             </div>
-            <div className="bg-secondary/50 rounded-xl p-6 text-center">
-              <Facebook className="w-8 h-8 text-primary mx-auto mb-3" />
-              <h4 className="font-semibold text-primary mb-2">Facebook</h4>
-              <p className="text-muted-foreground">@CoachAndreiOfficial</p>
-            </div>
-            <div className="bg-secondary/50 rounded-xl p-6 text-center">
-              <Instagram className="w-8 h-8 text-primary mx-auto mb-3" />
-              <h4 className="font-semibold text-primary mb-2">Instagram</h4>
-              <p className="text-muted-foreground">@CoachAndrei</p>
-            </div>
-            <div className="bg-secondary/50 rounded-xl p-6 text-center">
-              <MessageCircle className="w-8 h-8 text-primary mx-auto mb-3" />
-              <h4 className="font-semibold text-primary mb-2">WhatsApp</h4>
-              <p className="text-muted-foreground">+1 (555) 123-4567</p>
+
+            {/* Fitness Journey Form - Right Side */}
+            <div className="lg:pl-8">
+              <FitnessJourneyForm />
             </div>
           </div>
         </div>
